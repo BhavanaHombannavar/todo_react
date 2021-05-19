@@ -6,8 +6,15 @@ export default class TodoList extends React.Component {
     super(props);
   }
   render(){
+
     return (
-      <Todo />
+      <ul>
+      {this.props.currentList.map(el =>
+        <Todo currentItem={el} key={el.id}
+        currentList={this.props.currentList}
+        setCurrentList={this.props.setCurrentList}/>
+      )}
+      </ul>
     )
   }
 }

@@ -25,12 +25,20 @@ export default class Form extends React.Component{
     // console.log(this.state.currentList)
     let newList = [...this.props.currentList, {text:this.state.currentInput, id:Date. now(), completed:false}]
     this.props.setCurrentList(newList);
+    this.props.setCurrentInput('')
+    this.setState ({currentInput: ''});
   }
 
   render() {
     return (
       <div>
-        <input type="text" autoComplete="off" name="to_do_name" onChange={this.setInputText}/>
+        <input
+        type="text"
+        autoComplete="off"
+        name="to_do_name"
+        onChange={this.setInputText}
+        value={this.state.currentInput}
+        />
         <input type="submit" value="add" onClick={this.submitCurrentInput}/>
         <select name="current_status">
           <option>All</option>

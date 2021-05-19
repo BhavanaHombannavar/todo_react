@@ -13,11 +13,14 @@ function App() {
   return (
     <div className="App">
       <Form
+      currentInput={currentInput}
       setCurrentInput={setCurrentInput}
       currentList={currentList}
       setCurrentList={setCurrentList}/>
 
-      <TodoList />
+      <TodoList
+      currentList={currentList}
+      setCurrentList={setCurrentList}/>
     </div>
   );
 }
