@@ -17,7 +17,9 @@ export default class Todo extends React.Component {
           ...item, completed: !item.completed
         }
       }
+      return item;
     })
+    console.log(completedList);
     this.props.setCurrentList(completedList);
   }
 
