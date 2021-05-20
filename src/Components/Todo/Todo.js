@@ -4,9 +4,23 @@ export default class Todo extends React.Component {
   constructor(props) {
     super(props);
   }
-  handleCurrentList = (e) => {
-    alert(e);
+
+  deleteCurrentItem = (e) => {
+    let elementRemovedList = this.props.currentList.filter ( (el) => el.id !== this.props.currentItem.id );
+    this.props.setCurrentList(elementRemovedList);
   }
+
+  handleCurrentList = (e) => {
+    let completedList = this.props.currentList.map( item => {
+      if(item.id === this.props.currentItem.id){
+        return {
+          ...item, completed: !item.completed
+        }
+      }
+    })
+    this.props.setCurrentList(completedList);
+  }
+
   render(){
     console.log(this.props.currentItem)
     return (
@@ -14,7 +28,7 @@ export default class Todo extends React.Component {
         {this.props.currentItem.text}
         {this.props.currentItem.completed ? 'done' : ''}
         <button onClick={this.handleCurrentList}>complete</button>
-        <button>delete</button>
+        <button onClick={this.deleteCurrentItem}>delete</button>
         </li>
     )
   }

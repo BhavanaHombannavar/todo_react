@@ -12,7 +12,8 @@ export default class TodoList extends React.Component {
       {this.props.currentList.map(el =>
         <Todo currentItem={el} key={el.id}
         currentList={this.props.currentList}
-        setCurrentList={this.props.setCurrentList}/>
+        setCurrentList={this.props.setCurrentList}
+        currentItem={el}/>
       )}
       </ul>
     )
