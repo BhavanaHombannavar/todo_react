@@ -7,9 +7,11 @@ export default class TodoList extends React.Component {
   }
   render(){
 
+    // {this.props.currentList.map(el =>
+
     return (
       <ul>
-      {this.props.currentList.map(el =>
+      {this.props.filteredList.map(el =>
         <Todo currentItem={el} key={el.id}
         currentList={this.props.currentList}
         setCurrentList={this.props.setCurrentList}

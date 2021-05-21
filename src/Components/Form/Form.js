@@ -29,6 +29,12 @@ export default class Form extends React.Component{
     this.setState ({currentInput: ''});
   }
 
+  filterList = (e) => {
+
+    this.props.setStatus(e.target.value)
+
+  }
+
   render() {
     return (
       <div>
@@ -40,7 +46,7 @@ export default class Form extends React.Component{
         value={this.state.currentInput}
         />
         <input type="submit" value="add" onClick={this.submitCurrentInput}/>
-        <select name="current_status">
+        <select name="current_status" onChange={this.filterList}>
           <option>All</option>
           <option>Completed</option>
           <option>Not Completed</option>
