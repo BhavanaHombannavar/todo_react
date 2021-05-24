@@ -10,9 +10,13 @@ function App() {
   const [status, setStatus] = useState("all");
   const [filteredList, setFilteredList] = useState([]);
 
-  console.log(currentInput)
-    console.log(currentList)
-      console.log(status)
+  // console.log(currentInput)
+    // console.log(currentList)
+      // console.log(status)
+
+      useEffect(()=>{
+        getList();
+      }, [])
 
       const filterHandler = () => {
         switch (status) {
@@ -30,7 +34,23 @@ function App() {
 
       useEffect(()=>{
         filterHandler();
+        saveList();
       }, [currentList, status])
+
+      const saveList = () => {
+        localStorage.setItem("list", JSON.stringify(currentList));
+      }
+
+      // save to localstorage
+      const getList = () => {
+        if (localStorage.getItem("list") === null ){
+          localStorage.setItem("list", JSON.stringify([]));
+        }else{
+          let curList =JSON.parse( localStorage.getItem("list"));
+          console.log(curList);
+          setCurrentList(curList);
+        }
+      }
 
   return (
     <div className="App">

@@ -19,12 +19,12 @@ export default class Todo extends React.Component {
       }
       return item;
     })
-    console.log(completedList);
+    // console.log(completedList);
     this.props.setCurrentList(completedList);
   }
 
   render(){
-    console.log(this.props.currentItem)
+    // console.log(this.props.currentItem)
     return (
         <li key={this.props.currentItem.id}>
         {this.props.currentItem.text}
