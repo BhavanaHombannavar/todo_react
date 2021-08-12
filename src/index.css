@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#root{
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background: #ef5350;
+}
+.d-flex{
+  display: flex !important;
+}
+.todo_input{
+  padding: 10px;
+    background: #C0BDA5;
+    border: 0;
+    outline: 0;
+}
+.addButton{
+  background: #261447;
+    color: #fff;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    margin-right: 25px;
+    font-size: 20px;
+    line-height: 20px;
+}
+.currentStatus_selector{
+  padding: 10px;
+  background: #C0BDA5;
+  outline: 0;
+  border: 0;
+}
+.list_style{
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+.list_style button{
+  margin-left: 20px;
+  background: #261447;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  padding: 10px;
+  float: right;
+  line-height: 1;
+}
+.list_style li{
+  margin: 20px 0;
+}
+.done_class span{
+  text-decoration: line-through;
+}
+.done_class .completed_todo{
+  background: #388e3c;
+}

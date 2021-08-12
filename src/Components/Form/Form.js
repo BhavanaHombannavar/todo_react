@@ -37,16 +37,18 @@ export default class Form extends React.Component{
 
   render() {
     return (
-      <div>
+      <div className="d-flex">
         <input
         type="text"
         autoComplete="off"
         name="to_do_name"
         onChange={this.setInputText}
         value={this.state.currentInput}
+        className="todo_input"
         />
-        <input type="submit" value="add" onClick={this.submitCurrentInput}/>
-        <select name="current_status" onChange={this.filterList}>
+        {/*<input type="submit" value="add"/>*/}
+        <button type="submit"  onClick={this.submitCurrentInput} className="addButton"><i class="fas fa-plus"></i></button>
+        <select name="current_status" onChange={this.filterList} className="currentStatus_selector">
           <option>All</option>
           <option>Completed</option>
           <option>Not Completed</option>

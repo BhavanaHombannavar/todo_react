@@ -25,12 +25,12 @@ export default class Todo extends React.Component {
 
   render(){
     // console.log(this.props.currentItem)
+    let done_class = this.props.currentItem.completed ? 'done_class' : '';
     return (
-        <li key={this.props.currentItem.id}>
-        {this.props.currentItem.text}
-        {this.props.currentItem.completed ? 'done' : ''}
-        <button onClick={this.handleCurrentList}>complete</button>
-        <button onClick={this.deleteCurrentItem}>delete</button>
+        <li key={this.props.currentItem.id} className={done_class}>
+        <span >{this.props.index+1+'. '+this.props.currentItem.text}</span>
+        <button onClick={this.deleteCurrentItem}><i class="fas fa-times"></i></button>
+        <button onClick={this.handleCurrentList} className="completed_todo"><i class="fas fa-check"></i></button>
         </li>
     )
   }

@@ -10,14 +10,18 @@ export default class TodoList extends React.Component {
     // {this.props.currentList.map(el =>
 
     return (
-      <ul>
-      {this.props.filteredList.map(el =>
+      <>
+      <h3>To Do List</h3>
+      <ul className="list_style">
+      {this.props.filteredList.map((el, index) =>
         <Todo currentItem={el} key={el.id}
         currentList={this.props.currentList}
         setCurrentList={this.props.setCurrentList}
-        currentItem={el}/>
+        currentItem={el}
+        index={index}/>
       )}
       </ul>
+      </>
     )
   }
 }
