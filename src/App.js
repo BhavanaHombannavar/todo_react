@@ -47,7 +47,7 @@ function App() {
           localStorage.setItem("list", JSON.stringify([]));
         }else{
           let curList =JSON.parse( localStorage.getItem("list"));
-          console.log(curList);
+          // console.log(curList);
           setCurrentList(curList);
         }
       }

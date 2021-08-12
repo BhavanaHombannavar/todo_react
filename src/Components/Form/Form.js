@@ -47,7 +47,7 @@ export default class Form extends React.Component{
         className="todo_input"
         />
         {/*<input type="submit" value="add"/>*/}
-        <button type="submit"  onClick={this.submitCurrentInput} className="addButton"><i class="fas fa-plus"></i></button>
+        <button type="submit"  onClick={this.submitCurrentInput} className="addButton"><i className="fas fa-plus"></i></button>
         <select name="current_status" onChange={this.filterList} className="currentStatus_selector">
           <option>All</option>
           <option>Completed</option>

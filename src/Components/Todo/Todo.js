@@ -29,8 +29,8 @@ export default class Todo extends React.Component {
     return (
         <li key={this.props.currentItem.id} className={done_class}>
         <span >{this.props.index+1+'. '+this.props.currentItem.text}</span>
-        <button onClick={this.deleteCurrentItem}><i class="fas fa-times"></i></button>
-        <button onClick={this.handleCurrentList} className="completed_todo"><i class="fas fa-check"></i></button>
+        <button onClick={this.deleteCurrentItem}><i className="fas fa-times"></i></button>
+        <button onClick={this.handleCurrentList} className="completed_todo"><i className="fas fa-check"></i></button>
         </li>
     )
   }
